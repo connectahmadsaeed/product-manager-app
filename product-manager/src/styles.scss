@@ -1,0 +1,124 @@
+.sticky-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.toolbar-title {
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  color: white !important;
+  transition: color 0.3s;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+body.dark-theme {
+  background-color: #121212;
+  color: white;
+
+  .sticky-toolbar {
+    background-color: #333 !important;
+  }
+
+  .toolbar-title {
+    color: white !important;
+  }
+
+  .product-card {
+    background-color: #1f1f1f !important;
+    color: white;
+
+    .product-description {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .product-price {
+      color: #81c784;
+    }
+  }
+
+  .mat-form-field .mat-input-element {
+    color: white !important;
+    background-color: transparent !important;
+  }
+
+  .mat-form-field input::placeholder,
+  .mat-form-field textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+  }
+
+  .mat-form-field-label {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+
+  .mat-error {
+    color: #ff6b6b !important;
+  }
+
+  .mat-form-field-ripple {
+    background-color: white !important;
+  }
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 0 20px;
+  margin-top: 20px;
+}
+
+.product-card {
+  width: 250px;
+  border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+
+  .product-title {
+    font-weight: 600;
+    margin: 10px 0 5px 0;
+  }
+
+  .product-price {
+    color: #388e3c;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .product-description {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
+  }
+
+  mat-card-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.sticky-toolbar button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}

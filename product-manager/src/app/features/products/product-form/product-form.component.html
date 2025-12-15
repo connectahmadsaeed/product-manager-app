@@ -1,0 +1,33 @@
+<mat-card class="product-card" style="width: 500px;">
+    <h2 class="title">{{ isEdit ? 'Edit Product' : 'Add Product' }}</h2>
+
+    <form [formGroup]="productForm" (ngSubmit)="submit()">
+        <mat-form-field appearance="outline" floatLabel="always" class="full-width">
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="Enter title" formControlName="title">
+            <mat-error *ngIf="productForm.get('title')?.invalid">Title is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" floatLabel="always" class="full-width">
+            <mat-label>Price</mat-label>
+            <input matInput type="number" placeholder="Enter price" formControlName="price">
+            <mat-error *ngIf="productForm.get('price')?.invalid">Valid price required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" floatLabel="always" class="full-width">
+            <mat-label>Description</mat-label>
+            <textarea matInput placeholder="Enter description" formControlName="description"></textarea>
+            <mat-error *ngIf="productForm.get('description')?.invalid">Minimum 10 characters required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" floatLabel="always" class="full-width">
+            <mat-label>Image URL</mat-label>
+            <input matInput placeholder="Enter image URL" formControlName="image">
+            <mat-error *ngIf="productForm.get('image')?.invalid">Image URL is required</mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" class="submit-btn">
+            {{ isEdit ? 'Update Product' : 'Add Product' }}
+        </button>
+    </form>
+</mat-card>

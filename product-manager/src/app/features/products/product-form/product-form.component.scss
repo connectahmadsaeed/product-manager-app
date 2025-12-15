@@ -1,0 +1,67 @@
+.product-card {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.title {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.full-width {
+    width: 100%;
+    margin-bottom: 20px;
+
+    .mat-form-field-flex {
+        border-radius: 8px;
+    }
+}
+
+.submit-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+body.dark-theme {
+    mat-card.product-card {
+        background-color: #1f1f1f;
+        color: white;
+    }
+
+    mat-form-field {
+        .mat-input-element {
+            color: white !important;
+            background-color: transparent !important;
+            padding: 10px 0 6px 0;
+        }
+
+        input.mat-input-element::placeholder,
+        textarea.mat-input-element::placeholder {
+            color: rgba(255, 255, 255, 0.5) !important;
+        }
+
+        .mat-form-field-label {
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+
+        .mat-error {
+            color: #ff6b6b !important;
+        }
+
+        .mat-form-field-ripple {
+            background-color: #ffffff !important;
+        }
+    }
+
+    button.mat-raised-button {
+        color: white;
+    }
+}
